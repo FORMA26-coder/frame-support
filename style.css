@@ -1,0 +1,135 @@
+/* FRAME. の法務ページ。1枚だけ。外部の読み込みは一切しない。 */
+
+:root {
+  --bg: #F8F5EF;          /* Warm Ivory */
+  --surface: #FFFDFC;     /* Milk White */
+  --text: #292724;
+  --muted: #6F6962;
+  --rule: #E7DFD3;
+  --link: #8B6B4D;        /* Mocha */
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #292724;
+    --surface: #35322E;
+    --text: #F8F5EF;
+    --muted: #BEB7AE;
+    --rule: #4A453F;
+    --link: #D8C7AE;      /* Sand Beige */
+  }
+}
+
+* { box-sizing: border-box; }
+
+html { -webkit-text-size-adjust: 100%; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: -apple-system, BlinkMacSystemFont, "Hiragino Sans", "Hiragino Kaku Gothic ProN",
+               "Yu Gothic", Meiryo, system-ui, sans-serif;
+  font-size: 17px;
+  line-height: 1.85;
+}
+
+header, main, footer {
+  max-width: 40rem;
+  margin: 0 auto;
+  padding: 0 1.25rem;
+}
+
+header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 1rem;
+  padding-top: 1.75rem;
+}
+
+.brand {
+  margin: 0;
+  font-size: 1.1rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+
+.brand a, .lang a { color: var(--text); text-decoration: none; }
+
+.lang { margin: 0; font-size: 0.9rem; }
+.lang a { color: var(--link); text-decoration: underline; text-underline-offset: 0.2em; }
+
+main { padding-top: 1.5rem; padding-bottom: 3rem; }
+
+h1 {
+  font-size: 1.7rem;
+  line-height: 1.4;
+  margin: 0.5rem 0 0.75rem;
+  font-weight: 600;
+}
+
+h2 {
+  font-size: 1.2rem;
+  line-height: 1.5;
+  margin: 2.5rem 0 0.5rem;
+  padding-top: 1.25rem;
+  border-top: 1px solid var(--rule);
+  font-weight: 600;
+}
+
+h3 {
+  font-size: 1.02rem;
+  margin: 1.75rem 0 0.35rem;
+  font-weight: 600;
+}
+
+p { margin: 0.75rem 0; }
+
+ul, ol { margin: 0.75rem 0; padding-left: 1.5rem; }
+li { margin: 0.4rem 0; }
+
+strong { font-weight: 600; }
+
+a { color: var(--link); text-underline-offset: 0.2em; }
+
+.crumb, .updated { margin: 0; font-size: 0.9rem; color: var(--muted); }
+.updated { margin-bottom: 1.5rem; }
+
+.tagline { color: var(--muted); margin-bottom: 2rem; }
+
+.card {
+  display: block;
+  background: var(--surface);
+  border: 1px solid var(--rule);
+  border-radius: 14px;
+  padding: 1.1rem 1.25rem;
+  margin: 0.75rem 0;
+  text-decoration: none;
+  color: var(--text);
+}
+
+.card-title { display: block; font-weight: 600; color: var(--link); }
+.card-note { display: block; font-size: 0.92rem; color: var(--muted); line-height: 1.6; }
+
+footer {
+  border-top: 1px solid var(--rule);
+  padding-top: 1.5rem;
+  padding-bottom: 3rem;
+  font-size: 0.9rem;
+  color: var(--muted);
+}
+
+footer p { margin: 0.3rem 0; }
+
+footer nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem 1.25rem;
+  margin-bottom: 1rem;
+}
+
+@media (max-width: 26rem) {
+  body { font-size: 16px; }
+  h1 { font-size: 1.45rem; }
+}
